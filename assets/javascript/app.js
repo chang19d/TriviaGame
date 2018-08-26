@@ -215,9 +215,10 @@ var indexOfQuestion=0;
         $questionsDiv.html("<h1>Times Up!</h1></br>");
         $questionsDiv.append("<h2 class = 'correctAnswers'></h2>");
         $(".correctAnswers").text("Correct Answers: " + correctAnswers);
-        $questionsDiv.append("<h2 class = 'incorrectAnswers'></h2>");
+        $questionsDiv.append("<h2 class = 'incorrectAnswers'></h2></br>");
         $(".incorrectAnswers").text("Incorrect Answers: " + incorrectAnswers);
-      
+        $questionsDiv.append("<button type='button' class='btn btn-primary playAgain'></button>");
+        $(".playAgain").text("Play Again");
     }
 
 
@@ -232,6 +233,10 @@ var indexOfQuestion=0;
             incorrectAnswers++;
             refreshQuestion();
         }
+    });
+
+    $('body').on('click','.playAgain', function(){
+        startGame();
     });
 
 
