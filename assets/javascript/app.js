@@ -159,14 +159,18 @@ var answer4;
 var userAnswer;
 var correctChoice;
 var arrayOfUsedQuestions=[];
-    function pickRandomQuestion(){
-        var indexOfQuestion = Math.floor(Math.random() * 14);
+var indexOfQuestion=0;
+    function questionCheck(){
+        indexOfQuestion = Math.floor(Math.random() * 14);
         
         for(var i = 0; i<arrayOfUsedQuestions.length; i++){
             if(arrayOfUsedQuestions[i] == indexOfQuestion){
-                pickRandomQuestion();
+                questionCheck();
             }
         }
+    }
+    function pickRandomQuestion(){
+        questionCheck();
         arrayOfUsedQuestions.push(indexOfQuestion);
         
         questionToAsk = questionsArray[indexOfQuestion].question;
